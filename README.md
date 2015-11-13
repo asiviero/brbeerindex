@@ -1,6 +1,6 @@
-# BR Beer Index
+# BR Beer Index :beer:
 
-This is a project inteded to develop a web crawler for online beer stores, grouping the results and making it easy to compare them after a record linkage algorithm.
+This is a project intended to develop a web crawler for online beer stores, grouping the results and making it easy to compare them after a record linkage algorithm.
 
 Brazilian stores are the current focus, although that could change some time in the near future. It is mostly a learning project, however the best possible results are the main goal.
 
