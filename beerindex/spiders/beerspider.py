@@ -29,14 +29,31 @@ class BeerSpider(Spider):
             "xpath_price" : "//div[@class='product-shop']//span[@itemprop='price']//text()",
             "xpath_style" : "//table[@id='product-attribute-specs-table']//tr[contains(.,'Estilo')]//td[last()]//text()"
         },
-        # 'www.mundodascervejas.com' : {
-        #     "start_url" : 'http://www.mundodascervejas.com/buscar?q=cerveja',
-        #     "next_link" : '.topo .pagination a[rel="next"]::attr("href")',
-        #     "product_link" : '#listagemProdutos a.produto-sobrepor::attr("href")',
-        #     "xpath_title" : "//h1[@itemprop='name']//text()",
-        #     "xpath_price" : "//div[@class='principal']//div[contains(@class,'preco-produto')]//strong[contains(@class,'preco-promocional')]//text()",
-        #     "xpath_style" : "//div[@id='descricao']//table//tr[contains(.,'Estilo')]//td[last()]//text()"
-        # }
+        'www.mundodascervejas.com' : {
+            "start_url" : 'http://www.mundodascervejas.com/buscar?q=cerveja',
+            "next_link" : '.topo .pagination a[rel="next"]::attr("href")',
+            "product_link" : '#listagemProdutos a.produto-sobrepor::attr("href")',
+            "xpath_title" : "//h1[@itemprop='name']//text()",
+            "xpath_price" : "//div[@class='principal']//div[contains(@class,'preco-produto')]//strong[contains(@class,'preco-promocional')]//text()",
+            "xpath_style" : "//div[@id='descricao']//table//tr[contains(.,'Estilo')]//td[last()]//text()"
+        },
+        'www.clubeer.com.br': {
+            "start_url" : 'http://www.clubeer.com.br/loja',
+            "next_link" : '#pagination li.current + li a::attr("href")',
+            "product_link" : '.minhascervejas li .areaborder > a:first-child::attr("href")',
+            "xpath_title" : "//h1[@itemprop='name']//text()",
+            "xpath_price" : "//div[@id='principal']//div[contains(@class,'areaprecos')]//span[@itemprop='price']//text()",
+            "xpath_style" : "//div[contains(@class,'areaprodutoinfoscontent')]//ul[contains(.,'ESTILO')]//li[position()=2]//text()"
+        },
+        'www.clubedomalte.com.br': {
+            "start_url" : 'http://www.clubedomalte.com.br/pais',
+            "next_link" : '.paginacao li.pg:last-child a::attr("href")',
+            "product_link" : '.mainBar .spotContent > a:first-child::attr("href")',
+            "xpath_title" : "//h1[@itemprop='name']//text()",
+            "xpath_price" : "//div[contains(@class,'interna')]//div[contains(@class,'preco')]//*[@itemprop='price']//text()",
+            "xpath_style" : "//div[contains(@class,'areaprodutoinfoscontent')]//ul[contains(.,'ESTILO')]//li[position()=2]//text()"
+        }
+
     }
 
     def domain_from_url(self,url):

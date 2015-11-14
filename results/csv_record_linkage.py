@@ -46,7 +46,7 @@ logging.getLogger().setLevel(log_level)
 
 # ## Setup
 
-input_file = 'cerveja_db3.csv'
+input_file = 'big_cerveja_db.csv'
 output_file = 'csv_example_output.csv'
 settings_file = 'csv_example_learned_settings'
 training_file = 'csv_example_training.json'
@@ -90,13 +90,13 @@ def readData(filename):
             except:
                 clean_row["name"] = ""
                 pass
-            print(clean_row["name"])
+            #print(clean_row["name"])
             try:
                 p = re.compile("\d+ ?m?l", re.IGNORECASE)
                 clean_row["volume"] = p.search(clean_row["name"])
                 if clean_row["volume"] is not None:
                     clean_row["volume"] = re.sub("[^\d*]","",clean_row["volume"].group(0))
-                    print(clean_row["volume"])
+                    #print(clean_row["volume"])
                 else:
                     clean_row["volume"] = "0"
             except TypeError:
