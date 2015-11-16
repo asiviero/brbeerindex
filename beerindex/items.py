@@ -14,3 +14,16 @@ class BeerindexItem(scrapy.Item):
     link = scrapy.Field()
     price = scrapy.Field()
     style = scrapy.Field()
+
+class WineIndexItem(scrapy.Item):
+    name = scrapy.Field()
+    winetype  = scrapy.Field()
+    year = scrapy.Field()
+    volume = scrapy.Field()
+    grape = scrapy.Field()
+    alcohol = scrapy.Field()
+    country = scrapy.Field()
+    region = scrapy.Field()
+    winery = scrapy.Field()
+    price = scrapy.Field()
+    link = scrapy.Field()
